@@ -10,8 +10,9 @@ ECP_full<-read.csv(ECPText,header = TRUE, sep = ";", na.strings="?")
 ECP<-ECP_full[ECP_full$Date %in% c("1/2/2007","2/2/2007") ,]
 
 #convert the Date and TIme
-ECP$Date<-as.Date(ECP$Date, format="%Y-%b-%d")
-ECP$Time<-strptime(ECP$Time, "%Y-%m-%d %H:%M:%S")
+ECP$Date<-as.Date(ECP$Date, "%d/%m/%Y")
+ECP$Time<-strptime(ECP$Time, "%H:%M:%S")
+
 
 #First Plot
 hist(as.numeric(ECP$Global_active_power), main="Ed_Global Active Power", 
@@ -21,3 +22,4 @@ hist(as.numeric(ECP$Global_active_power), main="Ed_Global Active Power",
 dev.copy(png, file="plot1.png", height=480, width=480)
 dev.off()
 
+?as.Date
