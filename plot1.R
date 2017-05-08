@@ -13,7 +13,6 @@ ECP<-ECP_full[ECP_full$Date %in% c("1/2/2007","2/2/2007") ,]
 ECP$Date<-as.Date(ECP$Date, format="%Y-%b-%d")
 ECP$Time<-strptime(ECP$Time, "%Y-%m-%d %H:%M:%S")
 
-
 #First Plot
 hist(as.numeric(ECP$Global_active_power), main="Ed_Global Active Power", 
      xlab="Global Active Power (kilowatts)", ylab="Frequency", col="red")
