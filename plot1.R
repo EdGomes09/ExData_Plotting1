@@ -21,5 +21,3 @@ hist(as.numeric(ECP$Global_active_power), main="Ed_Global Active Power",
 ## Saving to file
 dev.copy(png, file="plot1.png", height=480, width=480)
 dev.off()
-
-?as.Date
